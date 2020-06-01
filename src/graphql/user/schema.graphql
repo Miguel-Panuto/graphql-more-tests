@@ -1,0 +1,19 @@
+type User {
+    id: ID!
+    name: String!
+    email: String!
+}
+
+type token {
+    token: String!
+}
+
+type Query {
+    users: [User!]!
+    user(id: ID!): User
+}
+
+type Mutation {
+    createUser(name: String, email: String, password: String): User
+    createSession(email: String, password: String): token
+}
